@@ -1,0 +1,22 @@
+.list {
+  list-style: none; /* Забираємо маркери списку */
+  padding: 0; /* Забираємо зайві відступи */
+  margin: 0; /* Забираємо зайві відступи */
+  display: flex;
+  flex-direction: column; /* Вертикальне розташування елементів */
+  align-items: flex-start; /* Вирівнювання по лівій стороні */
+  margin-top: 20px;
+}
+
+.listItem {
+  margin-bottom: 10px; /* Відступ між елементами списку */
+}
+
+.link {
+  text-decoration: none; /* Забираємо підкреслення */
+  color: #000; /* Колір тексту */
+}
+
+.link:hover {
+  color: blue; /* Зміна кольору при наведенні */
+}

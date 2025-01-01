@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Розташування елементів вертикально */
+    align-items: flex-start; /* Вирівнювання по лівому краю */
+    padding: 0px; /* Відступи для зручності читання */
+  }
+  

@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування елементів */
+    align-items: flex-start; /* Вирівнювання всього контенту по лівій стороні */
+    padding: 0px; /* Відступи для зручності читання */
+  }
+  
+  .title {
+    margin-bottom: 20px; /* Відступ між заголовком і контентом */
+    font-size: 24px;
+  }
+  
+  .searchBar {
+    margin-bottom: 20px; /* Відступ між пошуковим рядком і списком */
+  }
+  
+  .movieList {
+    width: 100%; /* Розтягує список на всю ширину */
+  }
+  

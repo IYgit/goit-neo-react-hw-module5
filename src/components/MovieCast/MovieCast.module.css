@@ -1,0 +1,40 @@
+.castList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .castItem {
+    width: 150px;
+    text-align: center;
+  }
+  
+  .actorPhoto {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .actorName {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .character {
+    font-style: italic;
+    color: gray;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .message {
+    text-align: center;
+    margin-top: 20px;
+    color: gray;
+  }
+  

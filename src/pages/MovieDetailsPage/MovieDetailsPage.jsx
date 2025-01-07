@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, useLocation, Link, Outlet } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react';
+import { useParams, useNavigate, useLocation, NavLink, Outlet } from 'react-router-dom';
 import { fetchMovieDetails } from '../../api/moviesApi';
 import styles from './MovieDetailsPage.module.css';
 
@@ -10,8 +10,8 @@ const MovieDetailsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Зберігаємо поточний шлях до MovieDetailsPage
-  const [fromLocation] = useState(location.pathname);
+  // Заміна useState на useRef для збереження стану навігації
+  const fromLocation = useRef(location.state?.from || '/movies');
 
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const goBack = () => {
-    navigate(fromLocation); // Повертаємося до MovieDetailsPage
+    navigate(fromLocation.current); // Повертаємося до попереднього місця
   };
 
   if (error) {
@@ -67,20 +67,20 @@ const MovieDetailsPage = () => {
       </div>
 
       <nav className={styles.subNav}>
-        <Link
+        <NavLink
           to={`/movies/${movieId}/cast`}
-          state={{ from: fromLocation }}
-          className={styles.link}
+          state={{ from: fromLocation.current }}
+          className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
         >
           Cast
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to={`/movies/${movieId}/reviews`}
-          state={{ from: fromLocation }}
-          className={styles.link}
+          state={{ from: fromLocation.current }}
+          className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
         >
           Reviews
-        </Link>
+        </NavLink>
       </nav>
 
       <Outlet />

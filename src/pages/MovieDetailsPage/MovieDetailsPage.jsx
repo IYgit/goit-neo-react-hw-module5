@@ -10,11 +10,10 @@ const MovieDetailsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Заміна useState на useRef для збереження стану навігації
-  const fromLocation = useRef(location.state?.from || '/movies');
+  const fromLocation = useRef(location.state || '/movies');
 
   const [movie, setMovie] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchDetails = async () => {
